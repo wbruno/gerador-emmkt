@@ -3,7 +3,7 @@
 	 * @file gerador_emm.php
 	 * @author William Moraes - Ft Site
 	 */
-	 
+
 	ini_set('display_errors', true);
 	error_reporting(E_ALL);
 
@@ -139,12 +139,12 @@
 
 
 
-			$out = str_replace( 
+			$out = str_replace(
 					Array( '</tr>', '<tr>', '</td>', '<html>', '<head>', '</title>', '</head>', 
 						'<table', 'cellspacing="0">', 'marginheight="0">' ), 
 					Array( "\t</tr>\n", "\t<tr>\n", "</td>\n", "<html>\n", "<head>\n", "</title>\n", "\n</head>\n", 
 						"\n<table", "cellspacing=\"0\" align=\"center\">\n", "marginheight=\"0\">\n" ), 
-					$out 
+					$out
 				);
 
 
@@ -179,7 +179,7 @@
 				</label>
 				<label>
 					<span>Caminho absoluto das imagens no FTP</span>
-					<input type="text" name="path" value="http://www.mktprodutos.siteprofissional.com/Campanhas/<?php echo date('Y').'/'.date('m').'/' ?>" size="100" />
+					<input type="text" name="path" value="http://www.seusite.com.br/<?php echo date('Y').'/'.date('m').'/' ?>" size="100" />
 				</label>
 				<label class="submit">
 					<input type="submit" name="ok" value="ok" />
