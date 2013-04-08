@@ -32,11 +32,13 @@
 		var $out = jQuery("textarea[name='out']");
 
 		var $content = jQuery("textarea[name='content']");
+
 		var $bgcolor = jQuery("input[name='bgcolor']");
-		var $family = jQuery("input[name='family']");
-		var $size = jQuery("input[name='size']");
+		var $valign = jQuery("input[name='valign']");
+		var $align = jQuery("input[name='align']");
+
+		var $font = jQuery("input[name='font']");
 		var $color = jQuery("input[name='color']");
-		var $lh = jQuery("input[name='lineheight']");
 
 		$preview.find('td').click(function(){
 			var $this = jQuery( this );
@@ -50,7 +52,7 @@
 		});
 		function format( td )
 		{
-			return '<span style="color:'+$color.val()+'; font:'+$size.val()+' '+$family.val()+'; line-height: '+$lh.val()+'">'+td+'</span>';
+			return '<span style="color:'+$color.val()+'; font:'+$font.val()+'">'+td+'</span>';
 		}
 
 		function applyText( $td )
@@ -58,6 +60,8 @@
 			$td.find('img').remove();
 			$td.html( $content.val() );
 			$td.attr( 'bgcolor', $bgcolor.val() );
+			$td.attr( 'valign', $valign.val() );	
+			$td.attr( 'align', $align.val() );
 		}
 		function updateTextarea( new_content )
 		{
@@ -116,7 +120,7 @@
 			$pattern = '/<td( colspan="[0-9]*")?><img src="image(n)?s\/([-A-Za-z_0-9\.]+)" (width="[0-9]+" height="[0-9]+") alt=""><\/td>/';
 
 			/* devolve na TD, valign, a mesma largura e altura da imagem correspondente, e coloca align em cada imagem  */
-			$replacement = '<td${1} $4 valign="top"><img src="'.$_POST['path'].'image${2}s/${3}" $4 alt="" align="top" border="0"></td>';
+			$replacement = '<td${1} $4 valign="top" align="left"><img src="'.$_POST['path'].'image${2}s/${3}" $4 alt="" align="top" border="0"></td>';
 
 
 			$out = preg_replace( $pattern, $replacement, $file );
@@ -156,12 +160,12 @@
 
 			echo '<p>Preview do EMM:</p>';
 			echo '<div id="preview">',$out,'</div>';
-			echo '<label><span>Texto a ser inserido:</span> <textarea name="content" cols="40" rows="10"></textarea></label>';
-			echo '<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>';
-			echo '<label><span>font-family:</span> <input type="text" name="family" value="Arial, Tahoma, Geneva, sans-serif" /></label>';
-			echo '<label><span>font-size:</span> <input type="text" name="size" value="13px" /></label>';
-			echo '<label><span>line-height:</span> <input type="text" name="lineheight" value="1.4em" /></label>';
+			echo '<label><span>Texto a ser inserido:</span> <textarea name="content" cols="40" rows="10"></textarea></label>';	
+			echo '<label><span>font:</span> <input type="text" name="font" value="bold 13px/16px Arial, Tahoma, Geneva, sans-serif" /></label>';
 			echo '<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>';
+			echo '<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>';
+			echo '<label><span>valign:</span> <input type="text" name="valign" value="top" /></label>';
+			echo '<label><span>align:</span> <input type="text" name="align" value="left" /></label>';
 		}
 	}
 	else
