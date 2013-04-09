@@ -14,17 +14,7 @@
 <html>
 <head>
 	<title>Gerador de Email Marketing</title>
-	<style type="text/css">
-	* { margin: 0; padding: 0; border: none; list-style: none; }
-	body { font: 12px Tahoma, Verdana, sans-serif; }
-	#main { width: 800px; margin: 20px auto; }
-	h1 { margin-bottom: 20px; font-size: 22px; font-weight: normal;  }
-	label { display: block; margin-bottom: 20px; }
-	label span { display: block; }
-	.out { width: 700px; }
-	input, textarea { border: 1px solid #666; background: #fff; padding: 2px; font: 12px Tahoma, sans-serif; color: #666; width: 600px; }
-	.submit input { width: 100px; }
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript">
 	jQuery(document).ready(function(){
