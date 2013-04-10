@@ -42,15 +42,34 @@
 			$file = str_replace( '\"', '"', $_POST['emm'] );
 		}
 
-		if( stripos( $file, 'rowspan') )
+		$file = str_replace( array("\t","\r\n", "\n"), '', $file );
+
+
+
+		$pos_rowspan = stripos( $file, 'rowspan');
+		if( $pos_rowspan )
 		{
-			echo '<p>Nao faca slices com <strong>rowspan</strong></p>';
-			echo $voltar;
+			echo '<h2>Nao faca slices com <strong>rowspan</strong></h2>';
+
+			preg_match_all('/(<td( colspan=\"[0-9]+\")? rowspan=\"[0-9]+\"><img[^>]+><\/td>)/', $file, $pieces);
+
+
+			foreach( $pieces[0] AS $each ){
+				preg_match('/(<img[^>]+>)/', $each, $img);
+				preg_match('/src=\"([^"]+)"/', $img[0], $src);
+
+
+				$arr[] = '<li><p>rowspan encontrado na imagem: </p>
+					<p><strong>'.$src[0].'</strong></p>'.$img[0].'</li>';
+			}
+
+			echo '<ul>'.implode($arr).'</ul>';
+
+			echo '<br><br>'.$voltar;
+			exit();
 		}
 		else
 		{
-
-			$file = str_replace( array("\t","\r\n", "\n"), '', $file );
 
 			$file = preg_replace(
 							array(
