@@ -15,3 +15,9 @@ input, textarea, select { border: 1px solid #666; background: #fff; padding: 2px
 .submit input { width: 100px; }
 
 #preview { margin-bottom: 40px; }
+
+/* editar */
+#preview td:hover,
+#preview td.is-selected {
+	outline:  2px solid #006acc;
+}
