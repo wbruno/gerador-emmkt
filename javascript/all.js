@@ -15,16 +15,29 @@ jQuery(document).ready(function(){
 		var $this = jQuery( this ),
 			$td = $this;
 
+		if($this.hasClass('is-selected')) {
+			applyText( $td );
+			var new_content = format( $td.html() );
+			$td.html( new_content );
+
+			updateTextarea( $preview.html() );
+
+
+			$preview.find('a').off('click').on('click',function(e){
+				e.preventDefault();
+			});
+		} else {
+			$content.val( $td.html() );
+		}
+
+
 		removeSelected();
 		$this.addClass('is-selected');
-
-		applyText( $td );
-		var new_content = format( $td.html() );
-		$td.html( new_content );
-
-		updateTextarea( $preview.html() );
 	});
 	$body.click( removeSelected );
+	$('#format').click(function(e){
+		e.stopPropagation();
+	});
 
 
 

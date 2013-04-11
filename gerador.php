@@ -127,26 +127,28 @@
 		<div id="preview"><?php echo $out; ?></div>
 
 		<h2>Texto a ser inserido:</h2>
-		<label> <textarea name="content" cols="40" rows="10"></textarea></label>
-		<label><span>font:</span> <input type="text" name="font" value="bold 13px/16px Arial, Tahoma, Geneva, sans-serif" /></label>
-		<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>
-		<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>
-		<label>
-			<span>valign:</span>
-			<select name="valign">
-				<option value="top">top</option>
-				<option value="middle">middle</option>
-				<option value="bottom">bottom</option>
-			</select>
-		</label>
-		<label>
-			<span>align:</span>
-				<select name="align" >
-				<option value="left">left</option>
-				<option value="center">center</option>
-				<option value="right">right</option>
-			</select>
-		</label>
+		<fieldset id="format">
+			<label> <textarea name="content" cols="40" rows="10"></textarea></label>
+			<label><span>font:</span> <input type="text" name="font" value="bold 13px/16px Arial, Tahoma, Geneva, sans-serif" /></label>
+			<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>
+			<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>
+			<label>
+				<span>valign:</span>
+				<select name="valign">
+					<option value="top">top</option>
+					<option value="middle">middle</option>
+					<option value="bottom">bottom</option>
+				</select>
+			</label>
+			<label>
+				<span>align:</span>
+					<select name="align" >
+					<option value="left">left</option>
+					<option value="center">center</option>
+					<option value="right">right</option>
+				</select>
+			</label>
+		</fieldset>
 
 
 		<h2>Codigo HTML parametrizado</h2>
