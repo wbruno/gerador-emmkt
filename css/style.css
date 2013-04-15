@@ -2,6 +2,7 @@
 * { margin: 0; padding: 0; border: none; list-style: none; }
 
 body { font: 12px Tahoma, Verdana, sans-serif; }
+.home #main { width: 600px;}
 #main { margin-top: 20px; width: 1100px; position: relative; }
 
 h1 { margin-bottom: 20px; font-size: 22px; font-weight: normal;  }

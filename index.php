@@ -17,8 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
-<body>
-	<div id="main">
+<body class="home">
+	<div id="main" class="content">
 
 		<h1>Gerador de Email Marketing</h1>
 
