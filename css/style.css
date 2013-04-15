@@ -12,6 +12,8 @@ label { display: block; margin-bottom: 20px; }
 label span { display: block; }
 
 .fleft { float: left; }
+.fright { float: right; }
+
 .clear { clear: both; }
 .content { margin: 0 auto; }
 
@@ -21,6 +23,10 @@ input, textarea, select { border: 1px solid #666; background: #fff; padding: 2px
 
 #format { width: 370px; background: #efefef; padding: 15px; }
 
+#format label { display: table; width: 100%; }
+#format .fright {
+	width: 288px;
+}
 /* editar */
 
 #preview { margin-bottom: 40px; width: 700px; }

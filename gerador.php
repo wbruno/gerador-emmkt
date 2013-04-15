@@ -129,23 +129,38 @@
 		<div id="format" class="fleft">
 			<h2>Texto a ser inserido:</h2>
 			<fieldset>
-				<label> <textarea name="content" cols="40" rows="10"></textarea></label>
-				<label><span>face:</span> <input type="text" name="face" value="Arial, Tahoma, Geneva, sans-serif" /></label>
-				<label><span>font-size:</span> <input type="text" name="size" value="13px" /></label>
-				<label><span>font-weight:</span> <input type="text" name="weight" value="normal" /></label>
-				<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>
-				<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>
+				<label><textarea name="content" cols="40" rows="10"></textarea></label>
 				<label>
-					<span>valign:</span>
-					<select name="valign">
+					<span class="fleft">face:</span>
+					<input type="text" name="face" value="Arial, Tahoma, Geneva, sans-serif" class="fright" />
+				</label>
+				<label>
+					<span class="fleft">font-size:</span>
+					<input type="text" name="size" value="13px" class="fright" />
+				</label>
+				<label>
+					<span class="fleft">font-weight:</span>
+					<input type="text" name="weight" value="normal" class="fright" />
+				</label>
+				<label>
+					<span class="fleft">color:</span>
+					<input type="text" name="color" value="#000000" class="fright" />
+				</label>
+				<label>
+					<span class="fleft">bgcolor:</span>
+					 <input type="text" name="bgcolor" value="#ffffff" class="fright" />
+				</label>
+				<label>
+					<span class="fleft">valign:</span>
+					<select class="fright" name="valign">
 						<option value="top">top</option>
 						<option value="middle">middle</option>
 						<option value="bottom">bottom</option>
 					</select>
 				</label>
 				<label>
-					<span>align:</span>
-						<select name="align" >
+					<span class="fleft">align:</span>
+					<select class="fright" name="align">
 						<option value="left">left</option>
 						<option value="center">center</option>
 						<option value="right">right</option>

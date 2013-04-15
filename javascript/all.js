@@ -24,15 +24,13 @@ jQuery(document).ready(function(){
 
 			updateTextarea( $preview.html() );
 
-
-			$preview.find('a').off('click').on('click',function(e){
-				e.preventDefault();
-			});
 		} else {
-			$content.val( $td.html() );
+			$content.val( removeTag($td.html()) );
 		}
 
-
+		$preview.find('a').off('click').on('click',function(e){
+			e.preventDefault();
+		});
 		removeSelected();
 		$this.addClass('is-selected');
 	});
@@ -42,7 +40,12 @@ jQuery(document).ready(function(){
 	});
 
 
-
+	function removeTag( td )
+	{
+		td = td.replace(/<font[^>]+>/,'');
+		td = td.replace('</font>','');
+		return td;
+	}
 	function format( td )
 	{
 		return '<font color="'+$color.val()+'" face="'+$face.val()+'" style="font-size: '+$size.val()+'; font-weight: '+$weight.val()+'">'+td+'</font>';
@@ -52,7 +55,7 @@ jQuery(document).ready(function(){
 		$td.find('img').remove();
 		$td.html( $content.val() );
 		$td.attr( 'bgcolor', $bgcolor.val() );
-		$td.attr( 'valign', $valign.val() );	
+		$td.attr( 'valign', $valign.val() );
 		$td.attr( 'align', $align.val() );
 	}
 	function updateTextarea( new_content )
