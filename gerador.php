@@ -19,7 +19,7 @@
 	<script type="text/javascript" src="javascript/all.js"></script>
 </head>
 <body>
-	<div id="main">
+	<div id="main" class="content">
 
 		<h1>Gerador de Email Marketing</h1>
 <?php
@@ -124,38 +124,45 @@
 ?>
 
 		<h2>Preview do EMM:</h2>
-		<div id="preview"><?php echo $out; ?></div>
+		<div id="preview" class="fleft"><?php echo $out; ?></div>
 
-		<h2>Texto a ser inserido:</h2>
-		<fieldset id="format">
-			<label> <textarea name="content" cols="40" rows="10"></textarea></label>
-			<label><span>face:</span> <input type="text" name="face" value="Arial, Tahoma, Geneva, sans-serif" /></label>
-			<label><span>font-size:</span> <input type="text" name="size" value="13px" /></label>
-			<label><span>font-weight:</span> <input type="text" name="weight" value="normal" /></label>
-			<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>
-			<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>
+		<div id="format" class="fleft">
+			<h2>Texto a ser inserido:</h2>
+			<fieldset>
+				<label> <textarea name="content" cols="40" rows="10"></textarea></label>
+				<label><span>face:</span> <input type="text" name="face" value="Arial, Tahoma, Geneva, sans-serif" /></label>
+				<label><span>font-size:</span> <input type="text" name="size" value="13px" /></label>
+				<label><span>font-weight:</span> <input type="text" name="weight" value="normal" /></label>
+				<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>
+				<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>
+				<label>
+					<span>valign:</span>
+					<select name="valign">
+						<option value="top">top</option>
+						<option value="middle">middle</option>
+						<option value="bottom">bottom</option>
+					</select>
+				</label>
+				<label>
+					<span>align:</span>
+						<select name="align" >
+						<option value="left">left</option>
+						<option value="center">center</option>
+						<option value="right">right</option>
+					</select>
+				</label>
+			</fieldset>
+		</div><!-- format -->
+
+		<div id="output" class="content clear">
+			<h2>Codigo HTML parametrizado</h2>
 			<label>
-				<span>valign:</span>
-				<select name="valign">
-					<option value="top">top</option>
-					<option value="middle">middle</option>
-					<option value="bottom">bottom</option>
-				</select>
+				<textarea cols="70" rows="20" name="out" class="out" readonly="readonly"><?php echo $out; ?></textarea>
 			</label>
-			<label>
-				<span>align:</span>
-					<select name="align" >
-					<option value="left">left</option>
-					<option value="center">center</option>
-					<option value="right">right</option>
-				</select>
-			</label>
-		</fieldset>
+		</div><!-- #output -->
 
 
-		<h2>Codigo HTML parametrizado</h2>
-		<label>
-		<textarea cols="70" rows="20" name="out" class="out" readonly="readonly"><?php echo $out; ?></textarea></label>
+
 	</div><!-- /main -->
 </body>
 </html>
