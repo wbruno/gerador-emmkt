@@ -6,7 +6,9 @@ jQuery(document).ready(function(){
 		$bgcolor = jQuery("input[name='bgcolor']"),
 		$valign = jQuery("select[name='valign']"),
 		$align = jQuery("select[name='align']"),
-		$font = jQuery("input[name='font']"),
+		$face = jQuery("input[name='face']"),
+		$size = jQuery("input[name='size']"),
+		$weight = jQuery("input[name='weight']"),
 		$color = jQuery("input[name='color']");
 
 
@@ -43,7 +45,7 @@ jQuery(document).ready(function(){
 
 	function format( td )
 	{
-		return '<span style="color:'+$color.val()+'; font:'+$font.val()+'">'+td+'</span>';
+		return '<font color="'+$color.val()+'" face="'+$face.val()+'" style="font-size: '+$size.val()+'; font-weight: '+$weight.val()+'">'+td+'</font>';
 	}
 	function applyText( $td )
 	{

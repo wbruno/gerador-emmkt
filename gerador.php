@@ -129,7 +129,9 @@
 		<h2>Texto a ser inserido:</h2>
 		<fieldset id="format">
 			<label> <textarea name="content" cols="40" rows="10"></textarea></label>
-			<label><span>font:</span> <input type="text" name="font" value="bold 13px/16px Arial, Tahoma, Geneva, sans-serif" /></label>
+			<label><span>face:</span> <input type="text" name="face" value="Arial, Tahoma, Geneva, sans-serif" /></label>
+			<label><span>font-size:</span> <input type="text" name="size" value="13px" /></label>
+			<label><span>font-weight:</span> <input type="text" name="weight" value="normal" /></label>
 			<label><span>color:</span> <input type="text" name="color" value="#000000" /></label>
 			<label><span>bgcolor:</span> <input type="text" name="bgcolor" value="#ffffff" /></label>
 			<label>
