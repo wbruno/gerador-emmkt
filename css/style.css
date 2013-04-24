@@ -24,8 +24,16 @@ input, textarea, select { border: 1px solid #666; background: #fff; padding: 2px
 #format { width: 370px; background: #efefef; padding: 15px; }
 
 #format label { display: table; width: 100%; }
-#format .fright {
+#format input.fright,
+#format select.fright{
 	width: 288px;
+}
+.format-title { width: 200px; }
+.format-tag {
+	border: 1px solid #000;
+	background: #ddd;
+	padding: 4px;
+	cursor: pointer;
 }
 /* editar */
 

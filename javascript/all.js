@@ -9,7 +9,8 @@ jQuery(document).ready(function(){
 		$face = jQuery("input[name='face']"),
 		$size = jQuery("input[name='size']"),
 		$weight = jQuery("input[name='weight']"),
-		$color = jQuery("input[name='color']");
+		$color = jQuery("input[name='color']"),
+		$tagA = jQuery('#tag-a');
 
 
 	$preview.find('td').click(function(e){
@@ -37,6 +38,10 @@ jQuery(document).ready(function(){
 	$body.click( removeSelected );
 	$('#format').click(function(e){
 		e.stopPropagation();
+	});
+	$tagA.click(function(){
+		var v = '<a href="" target="_blank">' + $content.val() + '</a>';
+		$content.val( v );
 	});
 
 

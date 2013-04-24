@@ -127,7 +127,8 @@
 		<div id="preview" class="fleft"><?php echo $out; ?></div>
 
 		<div id="format" class="fleft">
-			<h2>Texto a ser inserido:</h2>
+			<h2 class="fleft format-title">Texto a ser inserido:</h2>
+			<span class="format-tag fright" id="tag-a">&lt;A&gt;</span>
 			<fieldset>
 				<label><textarea name="content" cols="40" rows="10"></textarea></label>
 				<label>
