@@ -21,7 +21,7 @@ label span { display: block; }
 input, textarea, select { border: 1px solid #666; background: #fff; padding: 2px; font: 12px Tahoma, sans-serif; color: #666; width: 368px; }
 .submit input { width: 100px; }
 
-#format { width: 370px; background: #efefef; padding: 15px; }
+#format { width: 370px; background: #efefef; padding: 15px; position: fixed; top: 0; right: 0; }
 
 #format label { display: table; width: 100%; }
 #format input.fright,

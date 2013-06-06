@@ -170,7 +170,7 @@
 			</fieldset>
 		</div><!-- format -->
 
-		<div id="output" class="content clear">
+		<div id="output" class="clear">
 			<h2>Codigo HTML parametrizado</h2>
 			<label>
 				<textarea cols="70" rows="20" name="out" class="out" readonly="readonly"><?php echo $out; ?></textarea>
