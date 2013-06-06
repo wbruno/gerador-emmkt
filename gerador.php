@@ -95,7 +95,7 @@
 			/* descobrindo a largura total da tabela */
 			$pattern = '/<table id="[\w]+" width="([0-9]+)"/';
 			preg_match( $pattern, $file, $matches );
-			$width_table = $matches[1];
+			$width_table = isset($matches[1]) ? $matches[1] : '700';
 
 
 			$out = str_replace(
