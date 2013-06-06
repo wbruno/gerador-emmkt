@@ -15,12 +15,11 @@ jQuery(document).ready(function(){
 
 	$preview.find('td').click(function(e){
 		e.stopPropagation();
-		var $this = jQuery( this ),
-			$td = $this,
+		var $td = jQuery( this ),
 			$font = $td.find('font');
 
 
-		if($this.hasClass('is-selected')) {
+		if($td.hasClass('is-selected')) {
 			applyText( $td );
 
 			var new_content = format( $td.html() );
@@ -35,10 +34,13 @@ jQuery(document).ready(function(){
 			$valign.val( $td.attr('valign') );
 			$align.val( $td.attr('align') );
 
-			var style = $font.attr('style');
 
-			$size.val( style.replace(/font-size: ([0-9]+px)(.*)/, '$1') );
-			$weight.val( style.replace(/(.*)font-weight: ([a-z]+)/, '$2') );
+
+			var style = $font.attr('style');
+			if( style ) {
+				$size.val( style.replace(/font-size: ([0-9]+px)(.*)/, '$1') );
+				$weight.val( style.replace(/(.*)font-weight: ([a-z]+)/, '$2') );
+			}
 
 
 			$content.val( removeTag($td.html()) );
@@ -48,7 +50,7 @@ jQuery(document).ready(function(){
 			e.preventDefault();
 		});
 		removeSelected();
-		$this.addClass('is-selected');
+		$td.addClass('is-selected');
 	});
 	$body.click( removeSelected );
 	$('#format').click(function(e){
