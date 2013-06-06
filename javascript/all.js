@@ -16,16 +16,31 @@ jQuery(document).ready(function(){
 	$preview.find('td').click(function(e){
 		e.stopPropagation();
 		var $this = jQuery( this ),
-			$td = $this;
+			$td = $this,
+			$font = $td.find('font');
+
 
 		if($this.hasClass('is-selected')) {
 			applyText( $td );
+
 			var new_content = format( $td.html() );
 			$td.html( new_content );
 
 			updateTextarea( $preview.html() );
 
 		} else {
+			$bgcolor.val( $td.attr('bgcolor') );
+			$face.val( $font.attr('face') );
+			$color.val( $font.attr('color') );
+			$valign.val( $td.attr('valign') );
+			$align.val( $td.attr('align') );
+
+			var style = $font.attr('style');
+
+			$size.val( style.replace(/font-size: ([0-9]+px)(.*)/, '$1') );
+			$weight.val( style.replace(/(.*)font-weight: ([a-z]+)/, '$2') );
+
+
 			$content.val( removeTag($td.html()) );
 		}
 
