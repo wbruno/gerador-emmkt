@@ -1,45 +1,249 @@
-/* Reset CSS */
-* { margin: 0; padding: 0; border: none; list-style: none; }
-
-body { font: 12px Tahoma, Verdana, sans-serif; }
-.home #main { width: 600px;}
-#main { margin-top: 20px; width: 1100px; position: relative; }
-
-h1 { margin-bottom: 20px; font-size: 22px; font-weight: normal;  }
-h2 { font-weight: normal; margin-bottom: 20px; }
-
-label { display: block; margin-bottom: 20px; }
-label span { display: block; }
-
-.fleft { float: left; }
-.fright { float: right; }
-
-.clear { clear: both; }
-.content { margin: 0 auto; }
-
-.out { width: 700px; }
-input, textarea, select { border: 1px solid #666; background: #fff; padding: 2px; font: 12px Tahoma, sans-serif; color: #666; width: 368px; }
-.submit input { width: 100px; }
-
-#format { width: 370px; background: #efefef; padding: 15px; position: fixed; top: 0; right: 0; }
-
-#format label { display: table; width: 100%; }
-#format input.fright,
-#format select.fright{
-	width: 288px;
+/**
+* @section Reset styles
+* These styles reset the default style sheet that comes with the user agent.
+*/
+html {
+  overflow-y: scroll;
+  min-height: 100%
 }
-.format-title { width: 200px; }
-.format-tag {
-	border: 1px solid #000;
-	background: #ddd;
-	padding: 4px;
-	cursor: pointer;
-}
-/* editar */
 
-#preview { margin-bottom: 40px; width: 700px; }
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, fieldset, blockquote, pre, textarea {
+  margin: 0
+}
+
+ul, ol, fieldset, legend {
+  padding: 0
+}
+
+fieldset {
+  border: none
+}
+
+input[type=button], input[type=submit], button {
+  cursor: pointer
+}
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
+  border: 0
+}
+
+input[type="submit"] {
+  -webkit-appearance: none
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+  vertical-align: bottom
+}
+
+a {
+  text-decoration: none
+}
+
+/**
+* Clearfix
+*/
+.cf:before, .cf:after {
+  content: " ";
+  display: table
+}
+
+.cf:after {
+  clear: both
+}
+
+/**
+* @section HTML5 Elements
+* Set display:block for HTML5 block elements
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+/**
+* @section Default
+* Deafult Styles here
+*/
+body {
+	font: 12px Tahoma, Verdana, sans-serif
+}
+
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+
+/**
+* @section Header
+* Header Styles here
+*/
+header {
+	margin-bottom: 20px
+}
+
+h1, h2 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #5A5A5A;
+	line-height: 40px;
+}
+
+h1 {
+	border-bottom: 1px solid #EEE;
+	font-size: 38px;
+	padding-bottom: 10px
+}
+
+h2 {
+	color: #999;
+	font-size: 24px;
+	padding-bottom: 5px
+}
+
+.warning {
+	color: #f00;
+}
+
+/**
+* @section Form
+* Custom Form Styles here
+*/
+label {
+	color: #333;
+	display: block;
+	margin-bottom: 5px;
+	font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[type='text'] {
+	height: 20px;
+	line-height: 20px
+}
+
+input[type='text'], textarea, select {
+	border: 1px solid #CCC;
+	background: #fff;
+	padding: 4px 6px;
+	color: #666;
+	font: 14px Tahoma, sans-serif;
+}
+
+input[type='submit']{
+    background-image: linear-gradient(to bottom, #0088CC, #0044CC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.home input[type='text'], .home textarea {
+	width: 686px;
+}
+
+.out {
+	height: 500px;
+	width: 1135px
+}
+
+/**
+* @section Main
+* Custom Styles here
+*/
+.content {
+	margin: 0 auto;
+}
+
+#main {
+	margin-top: 20px;
+	position: relative;
+	width: 1150px
+}
+
+.home #main {
+	width: 700px
+}
+
+.home p {
+	margin-bottom: 10px;
+}
+
+#preview {
+	max-width: 700px
+}
+
 #preview td:hover,
 #preview td.is-selected {
-	outline:  2px solid #006acc;
+	outline: 2px solid #006acc;
 }
-#output { width: 600px; }
+
+#sidebar {
+	position: relative;
+	width: 400px
+}
+
+#format {
+	background-color: #EFEFEF;
+	padding: 15px;
+	width: 370px
+}
+
+#format.fixed {
+	position: fixed
+}
+
+#format .format-tag {
+	background: none repeat scroll 0 0 #DDDDDD;
+    border: 1px solid #000000;
+    cursor: pointer;
+    padding: 4px;
+}
+
+#format .first {
+	margin-bottom: 5px
+}
+
+#format label {
+	line-height: 30px
+}
+
+#format input[type='text']{
+	width: 260px
+}
+
+#format select {
+	height: 28px;
+	width: 274px	
+}
+
+#format textarea {
+	font-size: 12px;
+	width: 356px
+}
+
+#catcher {
+	clear: both
+}
+
+/**
+* @section Footer
+* Footer Styles here
+*/
+footer {
+	clear: both;
+	margin-bottom: 10px
+}
