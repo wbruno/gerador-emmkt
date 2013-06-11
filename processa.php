@@ -1,5 +1,5 @@
 <?php
-	$voltar = '<a href="javascript:history.back(-1)">voltar</a>';
+	$voltar = '<a href="'.htmlspecialchars($_SERVER['HTTP_REFERER']).'">voltar</a>';
 	if( $_SERVER['REQUEST_METHOD']=='POST' )
 	{
 
@@ -25,7 +25,7 @@
 		$pos_rowspan = stripos( $file, 'rowspan');
 		if( $pos_rowspan )
 		{
-			echo '<h2>Nao faca slices com <strong>rowspan</strong></h2>';
+			echo '<h2 class="warning">Nao faca slices com <strong>rowspan</strong></h2>';
 
 			preg_match_all('/(<td( colspan=\"[0-9]+\")? rowspan=\"[0-9]+\"><img[^>]+><\/td>)/', $file, $pieces);
 
@@ -41,7 +41,7 @@
 
 			echo '<ul>'.implode($arr).'</ul>';
 
-			echo '<br><br>'.$voltar;
+			echo '<br>'.$voltar;
 			exit();
 		}
 		else
