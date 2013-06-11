@@ -1,7 +1,7 @@
 <?php
 /**
 * @file gerador_emm.php
-* @author William Moraes - Ft Site
+* @author William Moraes/Marco Bruno/Pedro Rogerio - Ft Site
 */
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 date_default_timezone_set('America/Sao_Paulo');
