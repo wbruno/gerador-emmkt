@@ -1,3 +1,10 @@
+<?php
+/**
+* @file gerador_emm.php
+* @author William Moraes - Ft Site
+*/
+date_default_timezone_set('America/Sao_Paulo');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
