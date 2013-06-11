@@ -103,6 +103,10 @@ h2 {
 	padding-bottom: 5px
 }
 
+.warning {
+	color: #f00;
+}
+
 /**
 * @section Form
 * Custom Form Styles here
