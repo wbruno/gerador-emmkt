@@ -152,7 +152,8 @@ input[type='submit']{
 }
 
 .out {
-	width: 658px
+	height: 500px;
+	width: 1135px
 }
 
 /**
@@ -166,7 +167,7 @@ input[type='submit']{
 #main {
 	margin-top: 20px;
 	position: relative;
-	width: 1100px
+	width: 1150px
 }
 
 .home #main {
@@ -178,7 +179,7 @@ input[type='submit']{
 }
 
 #preview {
-	width: 670px
+	max-width: 700px
 }
 
 #preview td:hover,
