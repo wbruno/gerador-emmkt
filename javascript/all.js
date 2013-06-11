@@ -10,7 +10,36 @@ jQuery(document).ready(function(){
 		$size = jQuery("input[name='size']"),
 		$weight = jQuery("input[name='weight']"),
 		$color = jQuery("input[name='color']"),
-		$tagA = jQuery('#tag-a');
+		$tagA = jQuery('#tag-a'),
+		$catcher = $('#catcher'),
+		$sidebar = $('#sidebar'),
+		$sticky = $('#format'),
+		$footer = $('footer'),
+		$footTop = $footer.offset().top;
+
+	$(window).scroll(function() {
+		if(isScrolledTo($sticky)) {
+			$sticky.css({
+				'position':'fixed',
+				'top': 0
+			})
+		}
+
+		var $stopHeight = $sidebar.offset().top,
+    		$stickyFoot = $sticky.offset().top + $sticky.outerHeight();
+
+    	if ($stickyFoot > $footTop){
+    		$sticky.css({
+	        	position:'absolute',
+	        	top: ($footTop - 168) - $sticky.outerHeight()
+	      	});
+    	} else {
+			if ($stopHeight > $sticky.offset().top) {
+			    $sticky.css('position','absolute');
+			    $sticky.css('top', $stopHeight  - 152);
+			}
+    	}
+	});
 
 	$preview.find('td').click(function(e){
 		e.stopPropagation();
@@ -57,7 +86,6 @@ jQuery(document).ready(function(){
 		$content.val( v );
 	});
 
-
 	function removeTag( td )
 	{
 		td = td.replace(/<font[^>]+>/,'');
@@ -80,7 +108,14 @@ jQuery(document).ready(function(){
 	{
 		$out.val( new_content );
 	}
-	function removeSelected(){
+	function removeSelected()
+	{
 		$preview.find('td').removeClass('is-selected');
+	}
+	function isScrolledTo(elem)
+	{
+		var docViewTop = $(window).scrollTop();
+		var elemTop = $(elem).offset().top;
+    	return elemTop <= docViewTop || elemTop >= docViewTop;
 	}
 });//document.ready
