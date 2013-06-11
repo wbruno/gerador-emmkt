@@ -191,6 +191,11 @@ input[type='submit']{
 	outline: 2px solid #006acc;
 }
 
+#sidebar {
+	position: relative;
+	width: 400px
+}
+
 #format {
 	background-color: #EFEFEF;
 	padding: 15px;
@@ -228,6 +233,10 @@ input[type='submit']{
 #format textarea {
 	font-size: 12px;
 	width: 356px
+}
+
+#catcher {
+	clear: both
 }
 
 /**
