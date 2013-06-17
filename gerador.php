@@ -28,7 +28,16 @@ date_default_timezone_set('America/Sao_Paulo');
 			<aside id="format">
 				<form>
 					<fieldset>
-						<span class="format-tag fright" id="tag-a">&lt;A&gt;</span>
+						<div class="format-tag fright">
+							<span id="tag-a">&lt;A&gt;</span>
+							<ul id="format-links">
+								<li data-href="https://www.facebook.com/locaweb">facebook</li>
+								<li data-href="https://twitter.com/locaweb">twitter</li>
+								<li data-href="http://www.youtube.com/locaweb">youtube</li>
+								<li data-href="http://www.locaweb.com.br/default.html">locaweb</li>
+								<li data-href="http://www.locaweb.com.br/fale-conosco.html">fale conosco</li>
+							</ul><!-- #format-links -->
+						</div><!-- .format-tag -->
 						<p class="cf first">
 							<label for="content" class="fleft">Texto a ser inserido:</label>
 							<textarea name="content" id="content" cols="40" rows="10"></textarea>

@@ -212,7 +212,23 @@ input[type='submit']{
     border: 1px solid #000000;
     cursor: pointer;
     padding: 4px;
+    position: relative;
 }
+.format-tag:hover #format-links {
+	display: block;
+}
+#format-links {
+	display: none;
+	position: absolute;
+	top: 23px; right: -1px;
+	background: #ddd;
+    border: 1px solid #000000;
+	padding: 10px 15px;
+	list-style: none;
+	width: 80px;
+	text-align: right;
+}
+.format-links li { margin-bottom: 7px; }
 
 #format .first {
 	margin-bottom: 5px

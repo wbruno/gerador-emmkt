@@ -14,6 +14,7 @@ jQuery(document).ready(function(){
 		$catcher = $('#catcher'),
 		$sidebar = $('#sidebar'),
 		$sticky = $('#format'),
+		$formatLinks = $('#format-links').find("li"),
 		$footer = $('footer'),
 		$footTop = $footer.offset().top;
 
@@ -84,10 +85,19 @@ jQuery(document).ready(function(){
 		e.stopPropagation();
 	});
 	$tagA.click(function(){
-		var v = '<a href="" target="_blank">' + $content.val() + '</a>';
-		$content.val( v );
+		insertA('');
+	});
+	$formatLinks.on('click', function(){
+		insertA($(this).attr('data-href'));
 	});
 
+
+	function insertA(link) {
+		var content = $content.val().replace(/<a[^>]+>/g, '').replace(/<\/a>/g, '');
+
+		var v = '<a href="' + link + '" target="_blank">' + content + '</a>';
+		$content.val( v );
+	}
 	function removeTag( td )
 	{
 		td = td.replace(/<font[^>]+>/,'');
