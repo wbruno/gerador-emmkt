@@ -77,7 +77,7 @@ jQuery(document).ready(function(){
 		$td.addClass('is-selected');
 	});
 
-	$preview.find('a').on('click',function(e){
+	$preview.on('click', 'a',function(e){
 		e.preventDefault();
 	});
 	$body.click( removeSelected );
