@@ -56,26 +56,28 @@ jQuery(document).ready(function(){
 			updateTextarea( $preview.html() );
 
 		} else {
-			$bgcolor.val( $td.attr('bgcolor') );
-			$face.val( $font.attr('face') );
-			$color.val( $font.attr('color') );
-			$valign.val( $td.attr('valign') );
-			$align.val( $td.attr('align') );
 
 			var style = $font.attr('style');
+
 			if( style ) {
+				$bgcolor.val( $td.attr('bgcolor') );
+				$face.val( $font.attr('face') );
+				$color.val( $font.attr('color') );
+				$valign.val( $td.attr('valign') );
+				$align.val( $td.attr('align') );
+
 				$size.val( style.replace(/font-size: ([0-9]+px)(.*)/, '$1') );
 				$weight.val( style.replace(/(.*)font-weight: ([a-z]+)/, '$2') );
 			}
 
 			$content.val( removeTag($td.html()) );
 		}
-
-		$preview.find('a').on('click',function(e){
-			e.preventDefault();
-		});
 		removeSelected();
 		$td.addClass('is-selected');
+	});
+
+	$preview.find('a').on('click',function(e){
+		e.preventDefault();
 	});
 	$body.click( removeSelected );
 	$('#format').click(function(e){
