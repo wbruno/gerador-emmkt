@@ -4,6 +4,7 @@
 * @author William Moraes/Marco Bruno/Pedro Rogerio - Ft Site
 */
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$link = str_replace("gerador/", "", $actual_link);
 date_default_timezone_set('America/Sao_Paulo');
 ?>
 <!DOCTYPE html>
@@ -33,7 +34,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 				<p>
 					<label for="path">Caminho absoluto das imagens no FTP:</label>
-					<input type="text" name="path" id="path" value="<?php echo $actual_link . date('Y').'/'.date('m').'/' ?>">
+					<input type="text" name="path" id="path" value="<?php echo $link . date('Y').'/'.date('m').'/' ?>">
 				</p>
 				
 				<p>
